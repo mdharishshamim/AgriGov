@@ -32,11 +32,11 @@ public class ComplianceRecord {
 	@Id
 	@Column(name = "complianceno", nullable = false)
 	@NotBlank(message = "Compliance ID is required")
-	private int complianceId;
+	private Integer complianceId;
 
 	@Column(name = "entityID", nullable = false)
 	@NotBlank(message = "Entity ID is required")
-	private int entityID;
+	private Integer entityID;
 
 	@Column(name = "Type", nullable = false, length = 50)
 	@NotBlank(message = "Entity Type is required")
