@@ -1,5 +1,9 @@
 package com.agrigov.repository;
 
-public interface FarmerDocumentRepository {
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import com.agrigov.model.FarmerDocument;
+
+public interface FarmerDocumentRepository extends JpaRepository<FarmerDocument, Long>{
 
 }

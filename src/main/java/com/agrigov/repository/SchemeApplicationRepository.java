@@ -1,5 +1,9 @@
 package com.agrigov.repository;
 
-public interface SchemeApplicationRepository {
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import com.agrigov.model.SchemeApplication;
+
+public interface SchemeApplicationRepository extends JpaRepository<SchemeApplication, Long>{
 
 }

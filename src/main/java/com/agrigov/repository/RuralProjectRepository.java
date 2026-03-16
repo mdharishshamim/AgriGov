@@ -1,5 +1,9 @@
 package com.agrigov.repository;
 
-public interface RuralProjectRepository {
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import com.agrigov.model.RuralProject;
+
+public interface RuralProjectRepository extends JpaRepository<RuralProject, Long>{
 
 }

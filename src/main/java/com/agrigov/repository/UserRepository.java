@@ -1,5 +1,9 @@
 package com.agrigov.repository;
 
-public interface UserRepository {
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import com.agrigov.model.User;
+
+public interface UserRepository extends JpaRepository<User, Long>{
 
 }

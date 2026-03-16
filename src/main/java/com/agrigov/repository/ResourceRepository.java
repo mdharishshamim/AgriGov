@@ -1,5 +1,9 @@
 package com.agrigov.repository;
 
-public interface ResourceRepository {
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import com.agrigov.model.Resource;
+
+public interface ResourceRepository extends JpaRepository<Resource, Long>{
 
 }
