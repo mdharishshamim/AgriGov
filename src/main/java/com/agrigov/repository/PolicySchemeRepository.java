@@ -1,5 +1,9 @@
 package com.agrigov.repository;
 
-public interface PolicySchemeRepository {
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface PolicySchemeRepository extends JpaRepository{
+
+	
 
 }

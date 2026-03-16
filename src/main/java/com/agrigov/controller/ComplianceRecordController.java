@@ -8,6 +8,8 @@ public class ComplianceRecordController {
 	public ComplianceRecordController(ComplianceRecordService complianceRecordService) {
 		this.complianceRecordService = complianceRecordService;
 	}
+	
+	
 
 	
 }

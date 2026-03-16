@@ -18,7 +18,7 @@ public class ComplianceRecordResponse {
 	private String notes;
 	private LocalDate date;
 
-	private Integer schemeId;
-	private Integer subsidyId;
-	private Integer projectId;
+	private Long schemeId;
+	private Long subsidyId;
+	private Long projectId;
 }
