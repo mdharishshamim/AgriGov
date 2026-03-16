@@ -1,5 +1,5 @@
 package com.agrigov.enums;
 
 public enum NotificationCategory {
-	SCHEME, SUBSIDY, PROJECT, COMPLIANCE
+    SCHEME, SUBSIDY, PROJECT, COMPLIANCE
 }
