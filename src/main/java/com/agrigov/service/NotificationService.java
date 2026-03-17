@@ -1,9 +1,10 @@
 package com.agrigov.service;
 
-import com.agrigov.dto.NotificationRequest;
-import com.agrigov.dto.NotificationResponse;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
+
+import com.agrigov.dto.NotificationRequest;
+import com.agrigov.dto.NotificationResponse;
 
 public interface NotificationService {
     NotificationResponse createNotification(NotificationRequest request);

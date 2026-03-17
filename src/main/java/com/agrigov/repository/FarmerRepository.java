@@ -1,5 +1,9 @@
 package com.agrigov.repository;
 
-public interface FarmerRepository {
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import com.agrigov.model.Farmer;
+
+public interface FarmerRepository extends JpaRepository<Farmer, Long> {
 
 }

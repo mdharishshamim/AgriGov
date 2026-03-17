@@ -3,9 +3,10 @@ package com.agrigov.model;
 import java.time.LocalDate;
 
 import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.validation.constraints.NotBlank;
-
+@Entity
 public class Report {
 	@Id
 	@Column(name = "Report ID", nullable = false, length = 50)

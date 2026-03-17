@@ -50,7 +50,7 @@ public class NotificationServiceImpl implements NotificationService {
         return mapToResponse(notificationRepository.save(notification));
     }
 
-    // This helper method is crucial to fix the mapToResponse error
+    
     private NotificationResponse mapToResponse(Notification entity) {
         NotificationResponse res = new NotificationResponse();
         res.setNotificationId(entity.getNotificationId());
