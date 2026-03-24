@@ -16,11 +16,13 @@ import jakarta.persistence.Index;
 import jakarta.persistence.Table;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
+import lombok.Data;
 
 @Entity
 @Table(name = "notifications", indexes = {
     @Index(name = "idx_user_notification", columnList = "userId")
 })
+@Data
 public class Notification {
 
     @Id
@@ -44,26 +46,29 @@ public class Notification {
 
     private LocalDateTime createdDate;
 
-    // --- Getters and Setters ---
-    public Long getNotificationId() { return notificationId; }
-    public void setNotificationId(Long notificationId) { this.notificationId = notificationId; }
-    
-    public Long getUserId() { return userId; }
-    public void setUserId(Long userId) { this.userId = userId; }
-    
-    public Long getEntityId() { return entityId; }
-    public void setEntityId(Long entityId) { this.entityId = entityId; }
-    
-    public String getMessage() { return message; }
-    public void setMessage(String message) { this.message = message; }
-    
-    public NotificationCategory getCategory() { return category; }
-    public void setCategory(NotificationCategory category) { this.category = category; }
-    
-    public NotificationStatus getStatus() { return status; }
-    public void setStatus(NotificationStatus status) { this.status = status; }
-    
-    public LocalDateTime getCreatedDate() { return createdDate; }
-    public void setCreatedDate(LocalDateTime createdDate) { this.createdDate = createdDate; }
+	/*
+	 * // --- Getters and Setters // Can also use @Data Annotation --- public Long
+	 * getNotificationId() { return notificationId; } public void
+	 * setNotificationId(Long notificationId) { this.notificationId =
+	 * notificationId; }
+	 * 
+	 * public Long getUserId() { return userId; } public void setUserId(Long userId)
+	 * { this.userId = userId; }
+	 * 
+	 * public Long getEntityId() { return entityId; } public void setEntityId(Long
+	 * entityId) { this.entityId = entityId; }
+	 * 
+	 * public String getMessage() { return message; } public void setMessage(String
+	 * message) { this.message = message; }
+	 * 
+	 * public NotificationCategory getCategory() { return category; } public void
+	 * setCategory(NotificationCategory category) { this.category = category; }
+	 * 
+	 * public NotificationStatus getStatus() { return status; } public void
+	 * setStatus(NotificationStatus status) { this.status = status; }
+	 * 
+	 * public LocalDateTime getCreatedDate() { return createdDate; } public void
+	 * setCreatedDate(LocalDateTime createdDate) { this.createdDate = createdDate; }
+	 */
 }
 

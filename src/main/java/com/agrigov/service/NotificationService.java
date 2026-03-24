@@ -10,4 +10,5 @@ public interface NotificationService {
     NotificationResponse createNotification(NotificationRequest request);
     Page<NotificationResponse> getUserNotifications(Long userId, Pageable pageable);
     NotificationResponse markAsRead(Long notificationId);
+    Page<NotificationResponse> getAllNotifications(Pageable pageable);
 }

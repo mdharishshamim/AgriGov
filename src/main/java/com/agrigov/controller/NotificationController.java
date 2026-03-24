@@ -3,6 +3,7 @@ package com.agrigov.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.data.web.PageableDefault;
@@ -25,26 +26,32 @@ import jakarta.validation.Valid;
 @RequestMapping("/api/notifications")
 public class NotificationController {
 
-    @Autowired
-    private NotificationService notificationService;
+	@Autowired
+	private NotificationService notificationService;
 
-    @PostMapping
-    public ResponseEntity<NotificationResponse> createNotification(@Valid @RequestBody NotificationRequest request) {
-        return ResponseEntity.ok(notificationService.createNotification(request));
-    }
+	@PostMapping
+	public ResponseEntity<NotificationResponse> createNotification(@Valid @RequestBody NotificationRequest request) {
+		return ResponseEntity.ok(notificationService.createNotification(request));
+	}
 
-    @GetMapping("/user/{userId}")
-    public ResponseEntity<List<NotificationResponse>> getUserNotifications(
-            @PathVariable Long userId, 
-            @PageableDefault(size = 20, sort = "createdDate", direction = Sort.Direction.DESC) Pageable pageable) {
-        
-        // Extract the List from the Page object
-        List<NotificationResponse> list = notificationService.getUserNotifications(userId, pageable).getContent();
-        return ResponseEntity.ok(list);
-    }
+	@GetMapping("/user/{userId}")
+	public ResponseEntity<List<NotificationResponse>> getUserNotifications(@PathVariable Long userId,
+			@PageableDefault(size = 20, sort = "createdDate", direction = Sort.Direction.DESC) Pageable pageable) {
 
-    @PatchMapping("/{id}/read")
-    public ResponseEntity<NotificationResponse> markAsRead(@PathVariable Long id) {
-        return ResponseEntity.ok(notificationService.markAsRead(id));
-    }
+		// Extract the List from the Page object
+		List<NotificationResponse> list = notificationService.getUserNotifications(userId, pageable).getContent();
+		return ResponseEntity.ok(list);
+	}
+
+	@GetMapping
+	public ResponseEntity<Page<NotificationResponse>> getAllNotifications(
+			@PageableDefault(size = 20, sort = "createdDate", direction = Sort.Direction.DESC) Pageable pageable) {
+
+		return ResponseEntity.ok(notificationService.getAllNotifications(pageable));
+	}
+
+	@PatchMapping("/{id}/read")
+	public ResponseEntity<NotificationResponse> markAsRead(@PathVariable Long id) {
+		return ResponseEntity.ok(notificationService.markAsRead(id));
+	}
 }
